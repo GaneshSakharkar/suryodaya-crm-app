@@ -18,7 +18,7 @@ const LINKS = [
     title: "Admin",
     items: [
       { label: "Admin Login", path: "/admin-login" },
-      { label: "Admin Register", path: "/admin-register" },
+      //{ label: "Admin Register", path: "/admin-register" },
     ],
   },
 ];

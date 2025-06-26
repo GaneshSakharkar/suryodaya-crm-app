@@ -170,12 +170,12 @@ export const AdminLoginPage = () => {
             <a href="#" className="hover:text-blue-500">
               Forgot password?
             </a>
-            <NavLink
+            {/* <NavLink
               to="/admin-register"
               className="hover:text-blue-500 font-medium"
             >
               Create account
-            </NavLink>
+            </NavLink> */}
           </div>
         </form>
       </div>

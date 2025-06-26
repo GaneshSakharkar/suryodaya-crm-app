@@ -65,9 +65,10 @@ export const DueDateTable = ({ dueForm, refetch }) => {
                 <td className="px-4 py-2 border border-gray-300">
                   ₹{entry.installments}
                 </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  {entry.deuDate}
-                </td>
+                <td className="px-4 py-2 border border-gray-300 whitespace-nowrap">
+  {entry.deuDate?.slice(0, 10)}
+</td>
+
                 <td className="px-4 py-2 border border-gray-300">
                   <div className="flex justify-center items-center gap-2">
                     <Button

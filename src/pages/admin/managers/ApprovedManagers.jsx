@@ -70,7 +70,7 @@ const ManagersList = () => {
                   <td className="border border-gray-300 px-4 py-2 text-center">
                     {manager.registationDate?.substring(0, 10) || "N/A"}
                   </td>
-                  <td className="border border-gray-300 px-4 py-2 text-center">
+                  <td className="px-4 py-2 border border-gray-300 whitespace-nowrap">
                     {manager.loginDate || "N/A"}
                   </td>
                   <td className="border border-gray-300 px-4 py-2 text-center">

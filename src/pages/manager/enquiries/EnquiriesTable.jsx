@@ -18,6 +18,12 @@ export const EnquiriesTable = ({ enquiries }) => {
 
   return (
     <div className="overflow-x-auto">
+
+       <div className="flex justify-end mb-2">
+    <Button size="sm" onClick={handleCreateButtonClick}>
+      Create Enquiry
+    </Button>
+  </div>
       <table className="min-w-full table-auto border-collapse">
         <thead className="bg-gray-300">
           <tr>

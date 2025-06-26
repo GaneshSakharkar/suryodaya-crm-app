@@ -72,39 +72,40 @@ export const AdminRegisterPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const getRegister = async () => {
-    try {
-      const res = await registerAdmin(registerReq);
-      console.log(res.data);
-      alert("Register successfully");
-      setRegisterReq({
-        name: "",
-        email: "",
-        contact: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.log(error);
-      alert("Already have an account! Please login.");
-      setRegisterReq({
-        name: "",
-        email: "",
-        contact: "",
-        password: "",
-        confirmPassword: "",
-      });
-    }
-  };
+ const getRegister = async () => {
+  try {
+    const res = await registerAdmin(registerReq);
+    console.log(res.data);
+    alert("Registered successfully!");
+    setRegisterReq({
+      name: "",
+      email: "",
+      contact: "",
+      password: "",
+      confirmPassword: "",
+    });
+    navigate("/admin/dashboard");  // Navigate to dashboard after success
+  } catch (error) {
+    console.log(error);
+    alert("Already have an account or registration failed! Redirecting to Dashboard.");
+    setRegisterReq({
+      name: "",
+      email: "",
+      contact: "",
+      password: "",
+      confirmPassword: "",
+    });
+    navigate("/admin/dashboard");  // Navigate to dashboard even on failure
+  }
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      console.log("Registration details:", registerReq);
-      getRegister();
-      navigate("/admin-login");
-    }
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    console.log("Registration details:", registerReq);
+    getRegister();
+  }
+};
 
   return (
     <section className="min-h-screen flex justify-center items-center bg-gradient-to-br from-blue-100 via-white to-gray-100 p-6 sm:p-8 md:p-10">
@@ -287,6 +288,7 @@ export const AdminRegisterPage = () => {
             Sign In
           </NavLink>
         </Typography>
+
       </Card>
     </section>
   );
